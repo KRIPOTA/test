@@ -1,0 +1,14 @@
+include:
+  - 'https://git.gnzs.ru/public-devops-resources/devops-scripts/-/raw/main/gitlab-ci-base.yml'
+  - 'https://git.gnzs.ru/public-devops-resources/devops-scripts/-/raw/main/docker-image-builders-quasar-pwa.yml'
+  - 'https://git.gnzs.ru/public-devops-resources/devops-scripts/-/raw/main/generator-docker-compose-frontend-dev.yml'
+  - 'https://git.gnzs.ru/public-devops-resources/devops-scripts/-/raw/main/generator-docker-compose-frontend-prod.yml'
+
+.build-docker-image-script:
+  - !reference [.build-docker-image, frontend-extends-compile-tools]
+
+.generate-docker-compose-dev-script:
+  - !reference [.generate-docker-compose-frontend-dev]
+
+.generate-docker-compose-prod-script:
+  - !reference [.generate-docker-compose-frontend-prod]
