@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>TESTING GITHUB PAGES WITH VUE.JS</h1>
+    <div>{{ getData() }}</div>
   </div>
 </template>
 
@@ -8,9 +9,14 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+  methods: {
+    getData() {
+      return window.Telegram.WebApp;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
